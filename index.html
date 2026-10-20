@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
 <title>Cazar · Maquette</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -146,6 +147,42 @@ section{padding-block:clamp(72px,10vw,128px)}
 .mk{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,70px);text-align:left;align-items:center}
 .mk ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:8px}
 .mk li::before{content:"✦ ";color:var(--terra)}
+
+.ct{background:var(--sand);padding-block:clamp(80px,10vw,130px)}
+.ctg{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,96px);align-items:start}
+.ctl h2{font-size:clamp(36px,4.6vw,64px);line-height:1.02;margin:14px 0 18px}
+.ctl>p{color:var(--mute);font-size:17px;max-width:42ch;margin:0}
+.alts{margin-top:40px;border-top:1px solid var(--ink)}
+.altr{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);transition:padding .3s}
+.altr b{display:block;font:500 26px/1.1 var(--disp)}
+.altr i{font-style:normal;color:var(--mute);font-size:15px}
+.altr em{font-style:normal;color:var(--terra);font-size:22px;transition:transform .3s}
+.altr:hover{padding-left:10px}
+.altr:hover em{transform:translateX(6px)}
+.sig{display:flex;align-items:center;gap:14px;margin-top:34px;font:500 italic 17px var(--disp);color:var(--mute)}
+.sig .av{flex:none;width:56px;height:56px;border-radius:50%;background:url(i/founders.jpg) 62% 32%/170% auto no-repeat}
+.ctf{background:var(--ivory);padding:clamp(26px,4vw,48px);display:grid;gap:26px;box-shadow:0 30px 60px -30px rgba(28,24,22,.25);min-width:0}
+.lab{display:block;font:500 11px var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin-bottom:10px}
+.lab small{letter-spacing:.08em;text-transform:none;color:var(--mute);font-size:12px;margin-left:6px}
+.seg{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.sg2{flex:1 1 25%;min-width:0;background:none;border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:13px 8px;font:400 15px var(--body);color:var(--ink);cursor:pointer;transition:background .2s,color .2s}
+.sg2:hover{background:var(--sand)}
+.sg2.on{background:var(--ink);color:var(--ivory)}
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fld{display:block;min-width:0}
+.ctf input,.ctf select,.ctf textarea{width:100%;font:400 16px var(--body);color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--ink);padding:8px 0 10px;border-radius:0;appearance:none;-webkit-appearance:none}
+.ctf select{background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 10px) 55%,calc(100% - 5px) 55%;background-size:5px 5px;background-repeat:no-repeat;padding-right:22px;cursor:pointer}
+.ctf textarea{resize:vertical;font-size:16px}
+.ctf input:focus,.ctf select:focus,.ctf textarea:focus{outline:none;border-bottom:1px solid var(--terra)}
+.ctf ::placeholder{color:#B4AA9E}
+.ctx{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:6px}
+.ticks{list-style:none;margin:0;padding:0;display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--mute)}
+.ticks>li::before{content:"✦ ";color:var(--terra)}
+.cok{border-top:1px solid var(--line);padding-top:18px}
+.cok b{font:500 26px var(--disp)}
+.cok p{margin:6px 0 0;color:var(--mute)}
+@media (max-width:900px){.ctg{grid-template-columns:1fr}.tri{grid-template-columns:1fr}.duo{grid-template-columns:1fr}.sg2{flex-basis:50%}}
 .proj{position:relative;color:#fff;overflow:hidden;background:var(--ink)}
 .pbg{position:absolute;inset:-4%;background-size:cover;background-position:center;transition:background-image .8s ease}
 .proj::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,14,.8),rgba(20,16,14,.6) 50%,rgba(20,16,14,.88))}
@@ -225,7 +262,6 @@ footer{background:var(--ink);color:#CFC6BA;padding-block:72px 40px;font-size:14p
 @media (max-width:480px){.steps ol{grid-template-columns:1fr}.steps li,.steps li+li{padding-left:0;border-left:0}.sg{grid-template-columns:1fr}.fg{grid-template-columns:1fr}.dg{grid-template-columns:1fr}.dc{aspect-ratio:16/11}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
-<meta name="robots" content="noindex">
 </head>
 <body>
 
@@ -235,7 +271,7 @@ footer{background:var(--ink);color:#CFC6BA;padding-block:72px 40px;font-size:14p
  <a class="logo" href="#top" aria-label="Cazar"><img src="i/logo_ink.png" alt="CAZAR"></a>
  <nav><a href="#chasse"><span class="fr">La chasse</span><span class="en">The search</span></a><a href="#destinations">Destinations</a><a href="#heritage"><span class="fr">Héritage</span><span class="en">Heritage</span></a><a href="#histoires"><span class="fr">Histoires</span><span class="en">Stories</span></a></nav>
  <div class="lang" role="group" aria-label="Langue"><button type="button" id="lfr" class="on">FR</button><button type="button" id="len">EN</button></div>
- <a class="btn solid" href="#projet"><span class="fr">Votre projet</span><span class="en">Your project</span></a>
+ <a class="btn solid" href="#contact"><span class="fr">Votre projet</span><span class="en">Your project</span></a>
 </div></header>
 
 <div class="hero" id="top"><div class="slides" aria-hidden="true">
@@ -313,6 +349,36 @@ footer{background:var(--ink);color:#CFC6BA;padding-block:72px 40px;font-size:14p
  <p class="fine" style="margin-top:14px"><span class="fr">Ou recevez L’Édition Cazar : histoires de chasse et regards du terrain, une fois par mois.</span><span class="en">Or receive L’Édition Cazar: search stories and field insight, once a month.</span></p></div>
 </div></section>
 
+<section class="g ct" id="contact"><div class="w ctg">
+ <div class="ctl">
+  <div class="k"><span class="fr">Contact</span><span class="en">Contact</span></div>
+  <h2><span class="fr">Parlez-nous de votre projet</span><span class="en">Tell us about your project</span></h2>
+  <p><span class="fr">Quelques précisions, vos coordonnées, et un fondateur vous rappelle. Tout reste strictement confidentiel.</span><span class="en">A few details, your contact information, and a founder calls you back. Everything stays strictly confidential.</span></p>
+  <div class="alts">
+   <a class="altr" href="#contact"><span><b><span class="fr">Plutôt WhatsApp ?</span><span class="en">Prefer WhatsApp?</span></b><i><span class="fr">Écrivez-nous directement, réponse rapide.</span><span class="en">Message us directly, quick reply.</span></i></span><em>→</em></a>
+   <a class="altr" href="#contact"><span><b><span class="fr">Réserver un appel</span><span class="en">Book a call</span></b><i><span class="fr">Choisissez un créneau de 20 minutes.</span><span class="en">Pick a 20-minute slot.</span></i></span><em>→</em></a>
+  </div>
+  <div class="sig"><i class="av"></i><span><span class="fr">Chibo Agu &amp; Célia Menand lisent chaque demande.</span><span class="en">Chibo Agu &amp; Célia Menand read every request.</span></span></div>
+ </div>
+ <form class="ctf" id="cf" novalidate>
+  <div class="row"><span class="lab"><span class="fr">Où</span><span class="en">Where</span></span><div class="seg"><button type="button" class="sg2" data-v="France"><span class="fr">France</span><span class="en">France</span></button><button type="button" class="sg2" data-v="Espagne"><span class="fr">Espagne</span><span class="en">Spain</span></button><button type="button" class="sg2" data-v="Portugal"><span class="fr">Portugal</span><span class="en">Portugal</span></button><button type="button" class="sg2 on" data-v="Italie"><span class="fr">Italie</span><span class="en">Italy</span></button><button type="button" class="sg2" data-v="Grèce"><span class="fr">Grèce</span><span class="en">Greece</span></button><button type="button" class="sg2" data-v="Maroc"><span class="fr">Maroc</span><span class="en">Morocco</span></button><button type="button" class="sg2" data-v="Suisse"><span class="fr">Suisse</span><span class="en">Switzerland</span></button><button type="button" class="sg2" data-v="Ailleurs"><span class="fr">Ailleurs</span><span class="en">Elsewhere</span></button></div></div>
+  <div class="tri">
+   <label class="fld" for="cq"><span class="lab"><span class="fr">Quand</span><span class="en">When</span></span><select id="cq"><option data-fr="Dans les 6 mois" data-en="Within 6 months">Dans les 6 mois</option><option selected data-fr="6 à 12 mois" data-en="6 to 12 months">6 à 12 mois</option><option data-fr="Je m’informe" data-en="Just exploring">Je m’informe</option></select></label>
+   <label class="fld" for="cb"><span class="lab">Budget</span><select id="cb"><option>1 à 3 M€</option><option selected>3 à 6 M€</option><option>6 à 10 M€</option><option data-fr="10 M€ et plus" data-en="€10M and above">10 M€ et plus</option></select></label>
+   <label class="fld" for="cu"><span class="lab"><span class="fr">Pour</span><span class="en">For</span></span><select id="cu"><option data-fr="Résidence principale" data-en="Main home">Résidence principale</option><option selected data-fr="Résidence secondaire" data-en="Second home">Résidence secondaire</option><option data-fr="Investissement" data-en="Investment">Investissement</option><option data-fr="Hôtel" data-en="Hotel">Hôtel</option><option data-fr="Autre" data-en="Other">Autre</option></select></label>
+  </div>
+  <div class="duo">
+   <label class="fld" for="cn"><span class="lab"><span class="fr">Prénom</span><span class="en">First name</span></span><input id="cn" autocomplete="given-name" placeholder="Alexandra"></label>
+   <label class="fld" for="ce"><span class="lab">E-mail</span><input id="ce" type="email" autocomplete="email" placeholder="alexandra@email.com"></label>
+  </div>
+  <label class="fld" for="ctel"><span class="lab"><span class="fr">Téléphone ou WhatsApp</span><span class="en">Phone or WhatsApp</span></span><input id="ctel" type="tel" autocomplete="tel" placeholder="+44 7700 900000"></label>
+  <label class="fld" for="cm"><span class="lab"><span class="fr">Un mot sur votre projet</span><span class="en">A word on your project</span> <small><span class="fr">facultatif</span><span class="en">optional</span></small></span><textarea id="cm" rows="3" placeholder="Une maison avec vue sur le lac, assez de chambres pour la famille…"></textarea></label>
+  <div class="ctx"><button class="btn solid" type="submit"><span class="fr">Parler à un fondateur</span><span class="en">Talk to a founder</span></button>
+   <ul class="ticks"><li><span class="fr">Réponse sous 2 h ouvrées</span><span class="en">Reply within 2 business hours</span></li><li><span class="fr">Confidentiel</span><span class="en">Confidential</span></li><li><span class="fr">Sans engagement</span><span class="en">No commitment</span></li></ul></div>
+  <div class="cok" id="cok" hidden><b><span class="fr">Merci, c’est noté.</span><span class="en">Thank you, noted.</span></b><p><span class="fr">Un fondateur vous rappelle sous 2 h ouvrées. Maquette : aucune donnée n’est envoyée.</span><span class="en">A founder will call you back within 2 business hours. Mockup: no data is sent.</span></p></div>
+ </form>
+</div></section>
+
 <footer class="g"><div class="w">
  <div class="fg">
   <div><img class="lg" src="i/logo_white.png" alt="CAZAR"><p style="margin:0;max-width:30ch"><span class="fr">Maison de chasse en immobilier de prestige. France, Espagne, Portugal, Italie, Grèce, Suisse, Maroc.</span><span class="en">Prestige property search house. France, Spain, Portugal, Italy, Greece, Switzerland, Morocco.</span></p></div>
@@ -329,7 +395,7 @@ footer{background:var(--ink);color:#CFC6BA;padding-block:72px 40px;font-size:14p
 <script>
 (function(){
  var b=document.body,fr=document.getElementById('lfr'),en=document.getElementById('len');
- function L(l){b.classList.toggle('l-en',l==='en');fr.classList.toggle('on',l!=='en');en.classList.toggle('on',l==='en');document.documentElement.lang=l;try{localStorage.setItem('cz-l',l)}catch(e){}}
+ function L(l){b.classList.toggle('l-en',l==='en');fr.classList.toggle('on',l!=='en');en.classList.toggle('on',l==='en');document.documentElement.lang=l;document.querySelectorAll('option[data-en]').forEach(function(o){o.textContent=o.dataset[l]});try{localStorage.setItem('cz-l',l)}catch(e){}}
  fr.onclick=function(){L('fr')};en.onclick=function(){L('en')};
  try{if(localStorage.getItem('cz-l')==='en')L('en')}catch(e){}
  var sel={},pf=document.getElementById('pf'),pbg=document.getElementById('pbg');
@@ -340,6 +406,8 @@ footer{background:var(--ink);color:#CFC6BA;padding-block:72px 40px;font-size:14p
  pf.querySelectorAll('.back').forEach(function(x){x.onclick=function(){var cur=+pf.querySelector('.pst.on').dataset.s;go(cur-1)}});
  document.querySelectorAll('.dl').forEach(function(d){d.addEventListener('click',function(){var c=pf.querySelector('.tile[data-v="'+d.dataset.dest+'"]');if(c)c.click()})});
  var dpi=document.getElementById('dpi');document.querySelectorAll('.dl').forEach(function(d){d.addEventListener('mouseenter',function(){document.querySelectorAll('.dl').forEach(function(x){x.classList.remove('on')});d.classList.add('on');dpi.style.opacity=0;setTimeout(function(){dpi.src=d.dataset.img;dpi.style.opacity=1},180)})});document.querySelector('.dl').classList.add('on');
+ document.querySelectorAll('.sg2').forEach(function(c){c.onclick=function(){document.querySelectorAll('.sg2').forEach(function(x){x.classList.remove('on')});c.classList.add('on')}});
+ document.getElementById('cf').addEventListener('submit',function(e){e.preventDefault();this.querySelector('.ctx').hidden=true;document.getElementById('cok').hidden=false});
  pf.addEventListener('submit',function(e){e.preventDefault();go(4)});
  var sl=document.querySelectorAll('.sl'),capt=[['Méditerranée','Mediterranean'],['Lac de Côme','Lake Como'],['Ibiza','Ibiza'],['Provence','Provence'],['Marrakech','Marrakech']],si=0,cb=document.getElementById('capb');
  function cap(){var e=b.classList.contains('l-en');document.getElementById('capt').textContent=capt[si][e?1:0];document.getElementById('capn').textContent='0'+(si+1)+' / 05';cb.classList.remove('run');void cb.offsetWidth;cb.classList.add('run')}

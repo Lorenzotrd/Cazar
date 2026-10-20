@@ -168,7 +168,7 @@ section{padding-block:clamp(72px,10vw,128px)}
 .sg2{flex:1 1 25%;min-width:0;background:none;border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:13px 8px;font:400 15px var(--body);color:var(--ink);cursor:pointer;transition:background .2s,color .2s}
 .sg2:hover{background:var(--sand)}
 .sg2.on{background:var(--ink);color:var(--ivory)}
-.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tri{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 18px}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .fld{display:block;min-width:0}
 .ctf input,.ctf select,.ctf textarea{width:100%;font:400 16px var(--body);color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--ink);padding:8px 0 10px;border-radius:0;appearance:none;-webkit-appearance:none}
@@ -186,10 +186,11 @@ section{padding-block:clamp(72px,10vw,128px)}
 .proj{position:relative;color:#fff;overflow:hidden;background:var(--ink)}
 .pbg{position:absolute;inset:-4%;background-size:cover;background-position:center;transition:background-image .8s ease}
 .proj::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,14,.8),rgba(20,16,14,.6) 50%,rgba(20,16,14,.88))}
-.pin{position:relative;z-index:1;padding-block:clamp(72px,9vw,120px)}
+.pin{position:relative;z-index:1;padding-block:clamp(72px,9vw,120px) clamp(56px,7vw,90px)}
 .proj .k{color:#F0C9AE}
 .phd{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:34px}
 .phd h2{font-size:clamp(32px,4.2vw,58px);line-height:1.04;margin-top:14px;max-width:16ch}
+.psub{margin:0;color:#E6DDD1;font-size:17px;max-width:34ch}
 .prog{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.2em;color:#E6DDD1}
 .prog>i{width:140px;height:1px;background:rgba(255,255,255,.3);display:block}
 .prog>i>i{display:block;height:1px;background:#fff;transition:width .6s ease}
@@ -324,20 +325,11 @@ footer{background:var(--ink);color:#CFC6BA;padding-block:72px 40px;font-size:14p
 
 <section class="proj" id="projet"><div class="pbg" id="pbg" style="background-image:url(i/calanque.jpg)"></div>
 <div class="g pin"><div class="w">
- <div class="phd"><div><div class="k"><span class="fr">Votre projet</span><span class="en">Your project</span></div><h2><span class="fr">Racontez-nous la maison que vous cherchez</span><span class="en">Tell us about the home you are looking for</span></h2></div>
- <div class="prog"><span id="pstep">1 / 3</span><i><i id="pbar" style="width:33%"></i></i></div></div>
- <form id="pf" novalidate>
-  <div class="pst on" data-s="1"><p class="q"><span class="fr">Où vous voyez-vous ?</span><span class="en">Where do you see yourself?</span></p><div class="tiles"><button type="button" class="tile" data-g="d" data-v="Italie" data-bg="i/italie.jpg"><img src="i/italie.jpg" alt=""><span><span class="fr">Italie</span><span class="en">Italy</span></span></button><button type="button" class="tile" data-g="d" data-v="Espagne" data-bg="i/espagne.jpg"><img src="i/espagne.jpg" alt=""><span><span class="fr">Espagne</span><span class="en">Spain</span></span></button><button type="button" class="tile" data-g="d" data-v="France" data-bg="i/tropez.jpg"><img src="i/tropez.jpg" alt=""><span><span class="fr">France</span><span class="en">France</span></span></button><button type="button" class="tile" data-g="d" data-v="Grèce" data-bg="i/grece.jpg"><img src="i/grece.jpg" alt=""><span><span class="fr">Grèce</span><span class="en">Greece</span></span></button><button type="button" class="tile" data-g="d" data-v="Portugal" data-bg="i/portugal.jpg"><img src="i/portugal.jpg" alt=""><span><span class="fr">Portugal</span><span class="en">Portugal</span></span></button><button type="button" class="tile" data-g="d" data-v="Maroc" data-bg="i/maroc.jpg"><img src="i/maroc.jpg" alt=""><span><span class="fr">Maroc</span><span class="en">Morocco</span></span></button></div>
-   <div class="alt"><span class="fr">Ou bien</span><span class="en">Or</span> <button type="button" class="lk" data-g="d" data-v="Suisse"><span class="fr">la Suisse</span><span class="en">Switzerland</span></button> · <button type="button" class="lk" data-g="d" data-v="Ailleurs"><span class="fr">ailleurs</span><span class="en">elsewhere</span></button></div></div>
-  <div class="pst" data-s="2"><p class="q"><span class="fr">Et quel genre de lieu ?</span><span class="en">And what kind of place?</span></p><div class="tiles t4"><button type="button" class="tile" data-g="l" data-v="Face à la mer" data-bg="i/ibiza.jpg"><img src="i/ibiza.jpg" alt=""><span><span class="fr">Face à la mer</span><span class="en">By the sea</span></span></button><button type="button" class="tile" data-g="l" data-v="Au cœur d’une ville" data-bg="i/h4.jpg"><img src="i/h4.jpg" alt=""><span><span class="fr">Au cœur d’une ville</span><span class="en">In the heart of a city</span></span></button><button type="button" class="tile" data-g="l" data-v="Un domaine à la campagne" data-bg="i/h2.jpg"><img src="i/h2.jpg" alt=""><span><span class="fr">Un domaine à la campagne</span><span class="en">A country estate</span></span></button><button type="button" class="tile" data-g="l" data-v="Une villa d’architecte" data-bg="i/h1.jpg"><img src="i/h1.jpg" alt=""><span><span class="fr">Une villa d’architecte</span><span class="en">An architect villa</span></span></button></div>
-   <div class="alt"><button type="button" class="lk back"><span class="fr">← Changer de destination</span><span class="en">← Change destination</span></button> · <button type="button" class="lk" data-g="l" data-v="À définir ensemble"><span class="fr">à définir ensemble</span><span class="en">to be defined together</span></button></div></div>
-  <div class="pst" data-s="3"><p class="q" id="recap"></p>
-   <div class="fl"><label for="fn"><span class="fr">Prénom</span><span class="en">First name</span><input id="fn" autocomplete="given-name"></label><label for="fe">E-mail<input id="fe" type="email" autocomplete="email"></label>
-   <label class="full" for="ft"><span class="fr">Téléphone ou WhatsApp</span><span class="en">Phone or WhatsApp</span><input id="ft" type="tel" autocomplete="tel"></label></div>
-   <div class="sub"><button class="btn solid" type="submit"><span class="fr">Parler à un fondateur</span><span class="en">Talk to a founder</span></button><span><span class="fr">Réponse sous 2 h ouvrées · Confidentiel · Sans engagement</span><span class="en">Reply within 2 business hours · Confidential · No commitment</span></span></div>
-   <button type="button" class="lk back"><span class="fr">← Revenir</span><span class="en">← Back</span></button></div>
-  <div class="pst" data-s="4"><p class="q"><span class="fr">Merci. Un fondateur vous rappelle très vite.</span><span class="en">Thank you. A founder will call you back shortly.</span></p><p class="fine2"><span class="fr">Sur le site réel, la demande arrive dans le CRM de Cazar avec la destination et le type de lieu. Maquette : aucune donnée n’est envoyée.</span><span class="en">On the live site, the request lands in Cazar’s CRM with destination and type of place. Mockup: no data is sent.</span></p></div>
- </form>
+ <div class="phd"><div><div class="k"><span class="fr">Votre projet</span><span class="en">Your project</span></div><h2><span class="fr">Où vous voyez-vous ?</span><span class="en">Where do you see yourself?</span></h2></div>
+ <p class="psub"><span class="fr">Choisissez une destination, nous vous accompagnons pour la suite.</span><span class="en">Pick a destination, we take it from there.</span></p></div>
+ <div class="tiles"><button type="button" class="tile" data-g="d" data-v="Italie" data-bg="i/italie.jpg"><img src="i/italie.jpg" alt=""><span><span class="fr">Italie</span><span class="en">Italy</span></span></button><button type="button" class="tile" data-g="d" data-v="Espagne" data-bg="i/espagne.jpg"><img src="i/espagne.jpg" alt=""><span><span class="fr">Espagne</span><span class="en">Spain</span></span></button><button type="button" class="tile" data-g="d" data-v="France" data-bg="i/tropez.jpg"><img src="i/tropez.jpg" alt=""><span><span class="fr">France</span><span class="en">France</span></span></button><button type="button" class="tile" data-g="d" data-v="Grèce" data-bg="i/grece.jpg"><img src="i/grece.jpg" alt=""><span><span class="fr">Grèce</span><span class="en">Greece</span></span></button><button type="button" class="tile" data-g="d" data-v="Portugal" data-bg="i/portugal.jpg"><img src="i/portugal.jpg" alt=""><span><span class="fr">Portugal</span><span class="en">Portugal</span></span></button><button type="button" class="tile" data-g="d" data-v="Maroc" data-bg="i/maroc.jpg"><img src="i/maroc.jpg" alt=""><span><span class="fr">Maroc</span><span class="en">Morocco</span></span></button></div>
+   
+ <div class="alt"><span class="fr">Ou bien</span><span class="en">Or</span> <button type="button" class="lk" data-v="Suisse"><span class="fr">la Suisse</span><span class="en">Switzerland</span></button> · <button type="button" class="lk" data-v="Ailleurs"><span class="fr">ailleurs</span><span class="en">elsewhere</span></button></div>
 </div></div></section>
 
 <section class="g news"><div class="w mk">
@@ -366,13 +358,13 @@ footer{background:var(--ink);color:#CFC6BA;padding-block:72px 40px;font-size:14p
    <label class="fld" for="cq"><span class="lab"><span class="fr">Quand</span><span class="en">When</span></span><select id="cq"><option data-fr="Dans les 6 mois" data-en="Within 6 months">Dans les 6 mois</option><option selected data-fr="6 à 12 mois" data-en="6 to 12 months">6 à 12 mois</option><option data-fr="Je m’informe" data-en="Just exploring">Je m’informe</option></select></label>
    <label class="fld" for="cb"><span class="lab">Budget</span><select id="cb"><option>1 à 3 M€</option><option selected>3 à 6 M€</option><option>6 à 10 M€</option><option data-fr="10 M€ et plus" data-en="€10M and above">10 M€ et plus</option></select></label>
    <label class="fld" for="cu"><span class="lab"><span class="fr">Pour</span><span class="en">For</span></span><select id="cu"><option data-fr="Résidence principale" data-en="Main home">Résidence principale</option><option selected data-fr="Résidence secondaire" data-en="Second home">Résidence secondaire</option><option data-fr="Investissement" data-en="Investment">Investissement</option><option data-fr="Hôtel" data-en="Hotel">Hôtel</option><option data-fr="Autre" data-en="Other">Autre</option></select></label>
-  </div>
+  <label class="fld" for="cl"><span class="lab"><span class="fr">Type de lieu</span><span class="en">Type of place</span></span><select id="cl"><option data-fr="Face à la mer" data-en="By the sea">Face à la mer</option><option data-fr="Au cœur d’une ville" data-en="In the heart of a city">Au cœur d’une ville</option><option data-fr="Un domaine à la campagne" data-en="A country estate">Un domaine à la campagne</option><option data-fr="Une villa d’architecte" data-en="An architect villa">Une villa d’architecte</option><option data-fr="À définir ensemble" data-en="To be defined together" selected>À définir ensemble</option></select></label></div>
   <div class="duo">
    <label class="fld" for="cn"><span class="lab"><span class="fr">Prénom</span><span class="en">First name</span></span><input id="cn" autocomplete="given-name" placeholder="Alexandra"></label>
    <label class="fld" for="ce"><span class="lab">E-mail</span><input id="ce" type="email" autocomplete="email" placeholder="alexandra@email.com"></label>
   </div>
   <label class="fld" for="ctel"><span class="lab"><span class="fr">Téléphone ou WhatsApp</span><span class="en">Phone or WhatsApp</span></span><input id="ctel" type="tel" autocomplete="tel" placeholder="+44 7700 900000"></label>
-  <label class="fld" for="cm"><span class="lab"><span class="fr">Un mot sur votre projet</span><span class="en">A word on your project</span> <small><span class="fr">facultatif</span><span class="en">optional</span></small></span><textarea id="cm" rows="3" placeholder="Une maison avec vue sur le lac, assez de chambres pour la famille…"></textarea></label>
+  <label class="fld" for="cm"><span class="lab"><span class="fr">Un mot sur votre projet</span><span class="en">A word on your project</span> <small><span class="fr">facultatif</span><span class="en">optional</span></small></span><textarea id="cm" rows="3" data-fr="Une maison avec vue sur le lac, assez de chambres pour la famille…" data-en="A house with a lake view, enough bedrooms for the family…" placeholder="Une maison avec vue sur le lac, assez de chambres pour la famille…"></textarea></label>
   <div class="ctx"><button class="btn solid" type="submit"><span class="fr">Parler à un fondateur</span><span class="en">Talk to a founder</span></button>
    <ul class="ticks"><li><span class="fr">Réponse sous 2 h ouvrées</span><span class="en">Reply within 2 business hours</span></li><li><span class="fr">Confidentiel</span><span class="en">Confidential</span></li><li><span class="fr">Sans engagement</span><span class="en">No commitment</span></li></ul></div>
   <div class="cok" id="cok" hidden><b><span class="fr">Merci, c’est noté.</span><span class="en">Thank you, noted.</span></b><p><span class="fr">Un fondateur vous rappelle sous 2 h ouvrées. Maquette : aucune donnée n’est envoyée.</span><span class="en">A founder will call you back within 2 business hours. Mockup: no data is sent.</span></p></div>
@@ -395,20 +387,16 @@ footer{background:var(--ink);color:#CFC6BA;padding-block:72px 40px;font-size:14p
 <script>
 (function(){
  var b=document.body,fr=document.getElementById('lfr'),en=document.getElementById('len');
- function L(l){b.classList.toggle('l-en',l==='en');fr.classList.toggle('on',l!=='en');en.classList.toggle('on',l==='en');document.documentElement.lang=l;document.querySelectorAll('option[data-en]').forEach(function(o){o.textContent=o.dataset[l]});try{localStorage.setItem('cz-l',l)}catch(e){}}
+ function L(l){b.classList.toggle('l-en',l==='en');fr.classList.toggle('on',l!=='en');en.classList.toggle('on',l==='en');document.documentElement.lang=l;document.querySelectorAll('option[data-en]').forEach(function(o){o.textContent=o.dataset[l]});document.querySelectorAll('textarea[data-en]').forEach(function(o){o.placeholder=o.dataset[l]});try{localStorage.setItem('cz-l',l)}catch(e){}}
  fr.onclick=function(){L('fr')};en.onclick=function(){L('en')};
  try{if(localStorage.getItem('cz-l')==='en')L('en')}catch(e){}
- var sel={},pf=document.getElementById('pf'),pbg=document.getElementById('pbg');
- function go(n){pf.querySelectorAll('.pst').forEach(function(x){x.classList.toggle('on',x.dataset.s==n)});document.getElementById('pstep').textContent=Math.min(n,3)+' / 3';document.getElementById('pbar').style.width=(Math.min(n,3)/3*100)+'%';
-  if(n==3){var en=b.classList.contains('l-en');document.getElementById('recap').textContent=(sel.d||'')+(sel.l?' · '+sel.l:'')+(en?'. Where can a founder reach you?':'. Où un fondateur peut-il vous joindre ?')}}
- pf.querySelectorAll('[data-g]').forEach(function(c){c.addEventListener('click',function(){var g=c.dataset.g;pf.querySelectorAll('[data-g="'+g+'"]').forEach(function(x){x.classList.remove('on')});c.classList.add('on');
-  var l=c.querySelector(b.classList.contains('l-en')?'.en':'.fr');sel[g]=l?l.textContent:c.dataset.v;if(c.dataset.bg)pbg.style.backgroundImage='url('+c.dataset.bg+')';setTimeout(function(){go(g==='d'?2:3)},350)})});
- pf.querySelectorAll('.back').forEach(function(x){x.onclick=function(){var cur=+pf.querySelector('.pst.on').dataset.s;go(cur-1)}});
- document.querySelectorAll('.dl').forEach(function(d){d.addEventListener('click',function(){var c=pf.querySelector('.tile[data-v="'+d.dataset.dest+'"]');if(c)c.click()})});
+ var pbg=document.getElementById('pbg');
+ function pick(v,bg){if(bg)pbg.style.backgroundImage='url('+bg+')';document.querySelectorAll('.tile').forEach(function(x){x.classList.toggle('on',x.dataset.v===v)});
+  document.querySelectorAll('.sg2').forEach(function(x){x.classList.toggle('on',x.dataset.v===v)});setTimeout(function(){document.getElementById('contact').scrollIntoView({behavior:'smooth'})},450)}
+ document.querySelectorAll('#projet .tile,#projet .lk').forEach(function(c){c.addEventListener('click',function(){pick(c.dataset.v,c.dataset.bg)})});
  var dpi=document.getElementById('dpi');document.querySelectorAll('.dl').forEach(function(d){d.addEventListener('mouseenter',function(){document.querySelectorAll('.dl').forEach(function(x){x.classList.remove('on')});d.classList.add('on');dpi.style.opacity=0;setTimeout(function(){dpi.src=d.dataset.img;dpi.style.opacity=1},180)})});document.querySelector('.dl').classList.add('on');
  document.querySelectorAll('.sg2').forEach(function(c){c.onclick=function(){document.querySelectorAll('.sg2').forEach(function(x){x.classList.remove('on')});c.classList.add('on')}});
  document.getElementById('cf').addEventListener('submit',function(e){e.preventDefault();this.querySelector('.ctx').hidden=true;document.getElementById('cok').hidden=false});
- pf.addEventListener('submit',function(e){e.preventDefault();go(4)});
  var sl=document.querySelectorAll('.sl'),capt=[['Méditerranée','Mediterranean'],['Lac de Côme','Lake Como'],['Ibiza','Ibiza'],['Provence','Provence'],['Marrakech','Marrakech']],si=0,cb=document.getElementById('capb');
  function cap(){var e=b.classList.contains('l-en');document.getElementById('capt').textContent=capt[si][e?1:0];document.getElementById('capn').textContent='0'+(si+1)+' / 05';cb.classList.remove('run');void cb.offsetWidth;cb.classList.add('run')}
  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){cap();setInterval(function(){sl[si].classList.remove('on');si=(si+1)%sl.length;sl[si].classList.add('on');cap()},6000)}

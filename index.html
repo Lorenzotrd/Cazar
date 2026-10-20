@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cazar · Maquette</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap">
+<style>
+*{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+
+/* Layout: editorial luxury site, full-bleed photography, generous whitespace, one terracotta accent from the Cazar fan. Single light brand look. */
+:root{--ivory:#F7F3EC;--sand:#ECE4D7;--ink:#1C1816;--mute:#6F665D;--terra:#A35A32;--line:#DDD3C3;
+--disp:"Cormorant Garamond","Garamond",Georgia,serif;--body:"Jost","Futura","Avenir Next",system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--ink);font:300 16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+body:not(.l-en) .en,body.l-en .fr{display:none}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--ivory)}
+.g{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.w{max-width:1240px;margin:0 auto}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--disp);font-weight:500;text-wrap:balance;margin:0;letter-spacing:-.005em}
+.k{font:500 11px/1 var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--terra)}
+.ribbon{background:var(--ink);color:#E9E1D3;font-size:12px;letter-spacing:.06em;text-align:center;padding-block:8px}
+.ribbon b{color:#E2A57F;font-weight:500}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(247,243,236,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:28px;height:72px}
+.hd .logo img{height:30px;display:block}
+nav{display:flex;gap:26px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-left:auto}
+nav a:hover{color:var(--terra)}
+.lang{display:flex;border:1px solid var(--ink);font-size:12px;letter-spacing:.1em}
+.lang button{background:none;border:0;padding:6px 10px;font:inherit;color:var(--ink);cursor:pointer}
+.lang button.on{background:var(--ink);color:var(--ivory)}
+.btn{display:inline-flex;align-items:center;gap:10px;font:500 12px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;padding:16px 24px;border:1px solid currentColor;cursor:pointer;background:none;color:inherit;transition:background .25s,color .25s}
+.btn.solid{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.btn.solid:hover{background:var(--terra);border-color:var(--terra)}
+.btn:focus-visible,.chip:focus-visible,.lang button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--terra);outline-offset:2px}
+.hd .btn{padding:12px 16px}
+.hero{position:relative;min-height:min(86vh,760px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.slides{position:absolute;inset:0}
+.sl{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.1);transition:opacity 1.6s ease,transform 7s ease-out}
+.sl.on{opacity:1;transform:scale(1)}
+.cap{position:absolute;right:0;top:28px;z-index:2;display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#F3E9DD}
+.cap b{font:500 italic 22px var(--disp);letter-spacing:0;text-transform:none;min-width:150px}
+.cap .bar{width:90px;height:1px;background:rgba(255,255,255,.3);position:relative;overflow:hidden}
+.cap .bar i{position:absolute;inset:0;background:#fff;transform-origin:left;transform:scaleX(0)}
+.cap .bar i.run{animation:prog 6s linear forwards}
+@keyframes prog{to{transform:scaleX(1)}}
+.hin h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hin h1 .ln>span{display:inline-block;animation:up 1.1s cubic-bezier(.2,.7,.1,1) both}
+.hin h1 .ln:nth-child(2)>span{animation-delay:.15s}
+@keyframes up{from{transform:translateY(105%)}to{transform:none}}
+.hin .k,.hin p,.hin .ctas,.hin .reas{animation:fade 1.2s .5s ease both}
+@keyframes fade{from{opacity:.001;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes kb{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,16,14,.62) 0%,rgba(20,16,14,.35) 55%,rgba(20,16,14,.05) 100%),linear-gradient(180deg,rgba(20,16,14,.1) 50%,rgba(20,16,14,.6) 100%)}
+.hin{position:relative;z-index:1;padding-block:120px 64px;width:100%}
+.hero .k{color:#F0C9AE}
+.hero h1{font-size:clamp(40px,5.4vw,74px);line-height:1.02;margin-top:20px;max-width:16ch}
+.hero h1 em{font-style:italic;color:#F3D8C4}
+.hero p{max-width:52ch;font-size:17px;color:#EFE8DE;margin:22px 0 32px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero .btn.solid{background:#fff;color:var(--ink);border-color:#fff}
+.hero .btn.solid:hover{background:var(--terra);color:#fff;border-color:var(--terra)}
+.hstrip{display:flex;gap:22px;flex-wrap:wrap;margin-top:56px;padding-top:18px;border-top:1px solid rgba(255,255,255,.3);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#E6DDD1}
+section{padding-block:clamp(72px,10vw,128px)}
+.man{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,6vw,96px);align-items:center}
+.man .fan{width:min(300px,70%);display:block;margin:0 auto}
+.fph{margin:0;max-width:100%}
+.fph img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.fph figcaption{font:500 italic 15px var(--disp);color:var(--mute);margin-top:10px}
+.mani{text-align:center;padding-block:clamp(56px,7vw,96px) clamp(16px,2vw,24px)}
+.fan2{width:60px;margin:0 auto 26px;display:block}
+.mq1{font:500 italic clamp(28px,3.6vw,50px)/1.25 var(--disp);max-width:40ch;margin:0 auto 22px;text-wrap:balance}
+.man h2{font-size:clamp(30px,3.6vw,48px);line-height:1.12}
+.man h2 em{color:var(--terra)}
+.man p{color:var(--mute);max-width:58ch;margin:22px 0 0;font-size:17px}
+.sh{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:48px}
+.sh h2{font-size:clamp(34px,4.4vw,62px);line-height:1.02;margin-top:12px;max-width:20ch}
+.sh p{color:var(--mute);max-width:56ch;margin:0;font-size:17px}
+.steps{background:var(--sand)}
+.steps ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
+.steps li{padding:26px 26px 6px 0;min-width:0}
+.steps li+li{padding-left:26px;border-left:1px solid var(--line)}
+.sn{font:500 italic 64px/1 var(--disp);color:var(--terra)}
+.steps h3{font-size:34px;margin:14px 0 10px}
+.steps p{color:var(--mute);margin:0;font-size:15px}
+.dg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.dc{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;color:#fff;max-width:100%}
+.dc img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.dc:hover img{transform:scale(1.05)}
+.dc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(20,16,14,.7))}
+.dco{position:absolute;left:22px;right:22px;bottom:20px;z-index:1}
+.dco b{display:block;font:400 32px/1.1 var(--disp)}
+.dco span{font-size:13px;letter-spacing:.06em;color:#EDE4D8}
+.her{background:var(--ink);color:var(--ivory)}
+.her .sh p{color:#BDB3A7}
+.her .k{color:#E2A57F}
+.mq{overflow:hidden;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)))}
+.mqt{display:flex;gap:14px;width:max-content;animation:mq 60s linear infinite}
+.mq:hover .mqt{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mqt img{height:clamp(260px,34vw,440px);width:auto;flex:none;object-fit:cover}
+.dwrap{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(28px,5vw,70px);align-items:start}
+.dlist{border-top:1px solid var(--ink)}
+.dl{display:grid;grid-template-columns:1fr auto auto;align-items:baseline;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);transition:padding .35s ease,color .3s}
+.dl b{font:500 clamp(34px,4.4vw,60px)/1 var(--disp)}
+.dl .dp{font-size:14px;color:var(--mute);text-align:right}
+.dl .ar{font-size:20px;color:var(--terra);opacity:0;transform:translateX(-8px);transition:all .3s}
+.dl:hover,.dl.on{padding-left:18px}
+.dl:hover b,.dl.on b{font-style:italic;color:var(--terra)}
+.dl:hover .ar,.dl.on .ar{opacity:1;transform:none}
+.dth{display:none}
+.dprev{position:sticky;top:100px;aspect-ratio:4/5;overflow:hidden;max-width:100%}
+.dprev img{width:100%;height:100%;object-fit:cover;transition:opacity .4s ease}
+
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.st{min-width:0;cursor:pointer}
+.sti{aspect-ratio:3/4;overflow:hidden;max-width:100%}
+.sti img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.st:hover .sti img{transform:scale(1.05)}
+.stk{font:500 11px var(--body);letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin:18px 0 8px}
+.st h3{font-size:27px;line-height:1.15}
+.more{display:inline-block;margin-top:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:3px}
+.fees{display:grid;grid-template-columns:.9fr 1.6fr;gap:clamp(32px,6vw,90px);align-items:start}
+.big{font:400 clamp(110px,15vw,200px)/.85 var(--disp);color:var(--terra)}
+.big small{font-size:.4em}
+.fees .lead{font:400 24px/1.3 var(--disp);margin:18px 0 10px}
+.fees .lead+p{color:var(--mute);margin:0}
+.fr3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-top:1px solid var(--ink);padding-top:22px}
+.fr3 b{display:block;font:400 21px var(--disp);margin-bottom:6px}
+.fr3 p{margin:0;color:var(--mute);font-size:15px}
+.gar{margin-top:40px;background:var(--ink);color:var(--ivory);padding:28px 30px;display:grid;grid-template-columns:auto 1fr;gap:10px 22px;align-items:baseline}
+.gar .k{color:#E2A57F}
+.gar b{font:400 24px var(--disp)}
+.gar p{margin:0;color:#CFC6BA;grid-column:2}
+.fd{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
+.fd>div{border-top:1px solid var(--line);padding-top:16px}
+.fd b{font:400 22px var(--disp);display:block}
+.fd>div>span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--terra)}
+.fd p{margin:8px 0 0;color:var(--mute);font-size:15px}
+.reas{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;font-size:13px;letter-spacing:.06em;color:#EFE8DE}
+.reas>span::before{content:"✦ ";color:#F0C9AE}
+.mk{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,70px);text-align:left;align-items:center}
+.mk ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:8px}
+.mk li::before{content:"✦ ";color:var(--terra)}
+.proj{position:relative;color:#fff;overflow:hidden;background:var(--ink)}
+.pbg{position:absolute;inset:-4%;background-size:cover;background-position:center;transition:background-image .8s ease}
+.proj::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,14,.8),rgba(20,16,14,.6) 50%,rgba(20,16,14,.88))}
+.pin{position:relative;z-index:1;padding-block:clamp(72px,9vw,120px)}
+.proj .k{color:#F0C9AE}
+.phd{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:34px}
+.phd h2{font-size:clamp(32px,4.2vw,58px);line-height:1.04;margin-top:14px;max-width:16ch}
+.prog{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.2em;color:#E6DDD1}
+.prog>i{width:140px;height:1px;background:rgba(255,255,255,.3);display:block}
+.prog>i>i{display:block;height:1px;background:#fff;transition:width .6s ease}
+.pst{display:none}
+.pst.on{display:block;animation:fade .7s ease both}
+.q{font:500 italic clamp(24px,2.6vw,34px)/1.2 var(--disp);margin:0 0 22px;color:#F7EFE6}
+.tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.tiles.t4{grid-template-columns:repeat(4,1fr)}
+.tile{position:relative;aspect-ratio:3/4;overflow:hidden;border:1px solid rgba(255,255,255,.25);padding:0;cursor:pointer;background:#000;color:#fff;max-width:100%}
+.tile img{width:100%;height:100%;object-fit:cover;opacity:.72;transition:transform .8s ease,opacity .4s}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.55))}
+.tile>span{position:absolute;left:14px;right:14px;bottom:14px;text-align:left;font:500 24px/1.1 var(--disp);z-index:1}
+.tile:hover img,.tile:focus-visible img{transform:scale(1.07);opacity:1}
+.tile:hover{border-color:#fff}
+.tile.on{border:2px solid #E2A57F}
+.alt{margin-top:18px;font-size:14px;color:#D9CFC3}
+.lk{background:none;border:0;color:#fff;font:inherit;font-size:14px;text-decoration:underline;text-underline-offset:4px;cursor:pointer;padding:4px 0}
+.proj .fl{max-width:640px}
+.proj .fl label{color:#D9CFC3}
+.proj input{background:rgba(255,255,255,.08);border:0;border-bottom:1px solid rgba(255,255,255,.5);color:#fff;font-size:18px}
+.proj input:focus{border-bottom-color:#E2A57F;outline:none}
+.sub{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin:26px 0 14px;font-size:13px;color:#D9CFC3}
+.proj .btn.solid{background:#fff;color:var(--ink);border-color:#fff}
+.proj .btn.solid:hover{background:#E2A57F;border-color:#E2A57F}
+.fine2{color:#D9CFC3;max-width:60ch}
+.pg{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(32px,6vw,90px);align-items:start}
+.pg .pimg{aspect-ratio:4/5;overflow:hidden;max-width:100%}
+.pg .pimg img{width:100%;height:100%;object-fit:cover}
+form{display:grid;gap:26px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{font:400 22px var(--disp);margin-bottom:12px;padding:0}
+legend small{font:500 11px var(--body);letter-spacing:.2em;color:var(--terra);margin-right:10px;vertical-align:middle}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:400 14px var(--body);padding:10px 16px;border:1px solid var(--line);background:var(--ivory);color:var(--ink);cursor:pointer;transition:all .2s}
+.chip:hover{border-color:var(--ink)}
+.chip.on{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.fl{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fl label{display:grid;gap:6px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);min-width:0}
+.fl label.full{grid-column:1/-1}
+input,select{font:400 16px var(--body);padding:13px 14px;border:1px solid var(--line);background:var(--ivory);color:var(--ink);width:100%;border-radius:0}
+.fine{font-size:12px;color:var(--mute);margin:0}
+.ok{background:var(--ivory);border:1px solid var(--line);padding:28px}
+.ok h3{font-size:28px;margin-bottom:8px}
+.ok p{margin:0;color:var(--mute)}
+.news{background:var(--ivory)}
+.news img{height:22px;margin:0 auto 26px;display:block;opacity:.85}
+.news h2{font-size:clamp(28px,3.4vw,44px)}
+.news p{color:var(--mute);max-width:52ch;margin:14px auto 28px}
+.nf{display:flex;gap:10px;max-width:520px;margin:0 auto;flex-wrap:wrap}
+.nf input{flex:1 1 220px;width:auto}
+footer{background:var(--ink);color:#CFC6BA;padding-block:72px 40px;font-size:14px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
+.fg h4{font:500 11px var(--body);letter-spacing:.22em;text-transform:uppercase;color:#E2A57F;margin:0 0 14px}
+.fg ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.fg .lg{height:34px;margin-bottom:14px}
+.sel{user-select:all;color:#F2ECE3}
+.fb{margin-top:56px;padding-top:20px;border-top:1px solid #3A332E;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:#8F857A}
+.nbtn{position:fixed;max-width:calc(100vw - 36px);right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:30;background:var(--terra);color:#fff;border:0;font:500 12px var(--body);letter-spacing:.14em;text-transform:uppercase;padding:14px 18px;cursor:pointer;box-shadow:0 8px 24px rgba(28,24,22,.25)}
+.np{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(72px + env(safe-area-inset-bottom,0px));z-index:30;width:min(400px,calc(100vw - 36px));max-height:70vh;overflow:auto;background:var(--ivory);border:1px solid var(--line);box-shadow:0 18px 50px rgba(28,24,22,.25);padding:24px}
+.np h4{font:400 22px var(--disp);margin:0 0 4px}
+.np>p{margin:0 0 16px;font-size:13px;color:var(--mute)}
+.np ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.np li{display:flex;gap:12px}
+.nn{flex:none;width:24px;height:24px;border-radius:50%;background:var(--terra);color:#fff;font:500 12px/24px var(--body);text-align:center}
+.np b{font-weight:500;font-size:14px}
+.np li p{margin:2px 0 0;font-size:13px;color:var(--mute);line-height:1.5}
+@media (max-width:1000px){nav{display:none}.hd .lang{margin-left:auto}.steps ol{grid-template-columns:1fr}.steps li,.steps li+li{padding-left:0;border-left:0}.sg{grid-template-columns:1fr 1fr}.fg{grid-template-columns:1fr 1fr}}
+@media (max-width:1000px){.tiles{grid-template-columns:repeat(3,1fr)}.tiles.t4{grid-template-columns:repeat(2,1fr)}.tile{aspect-ratio:4/3}.cap{display:none}}
+@media (max-width:720px){.dwrap{grid-template-columns:1fr}.dprev{display:none}.dl{grid-template-columns:64px 1fr;gap:2px 16px;align-items:end}.dl b{align-self:end}.dl .dp{grid-column:2}.dth{display:block;width:64px;height:64px;object-fit:cover;grid-row:span 2}.dl .dp{text-align:left}.dl .ar{display:none}.fees,.mk,.fd,.fr3{grid-template-columns:1fr}.man,.pg{grid-template-columns:1fr}.pg .pimg{display:none}.dg{grid-template-columns:1fr 1fr}.dco b{font-size:24px}.hd .btn{display:none}.hd{height:62px}.hd .logo img{height:24px}.fl{grid-template-columns:1fr}}
+@media (max-width:480px){.steps ol{grid-template-columns:1fr}.steps li,.steps li+li{padding-left:0;border-left:0}.sg{grid-template-columns:1fr}.fg{grid-template-columns:1fr}.dg{grid-template-columns:1fr}.dc{aspect-ratio:16/11}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+<meta name="robots" content="noindex">
+</head>
+<body>
+
+
+<div class="ribbon g"><span class="fr"><b>Maquette Aimji</b> · proposition de nouveau site pour Cazar · octobre 2026</span><span class="en"><b>Aimji mockup</b> · proposed new website for Cazar · October 2026</span></div>
+<header class="g"><div class="w hd">
+ <a class="logo" href="#top" aria-label="Cazar"><img src="i/logo_ink.png" alt="CAZAR"></a>
+ <nav><a href="#chasse"><span class="fr">La chasse</span><span class="en">The search</span></a><a href="#destinations">Destinations</a><a href="#heritage"><span class="fr">Héritage</span><span class="en">Heritage</span></a><a href="#histoires"><span class="fr">Histoires</span><span class="en">Stories</span></a></nav>
+ <div class="lang" role="group" aria-label="Langue"><button type="button" id="lfr" class="on">FR</button><button type="button" id="len">EN</button></div>
+ <a class="btn solid" href="#projet"><span class="fr">Votre projet</span><span class="en">Your project</span></a>
+</div></header>
+
+<div class="hero" id="top"><div class="slides" aria-hidden="true">
+ <img class="sl on" src="i/hero.jpg" alt=""><img class="sl" src="i/como.jpg" alt=""><img class="sl" src="i/ibiza.jpg" alt=""><img class="sl" src="i/provence.jpg" alt=""><img class="sl" src="i/marrakech.jpg" alt=""></div>
+ <div class="cap g"><span id="capn">01 / 05</span><b id="capt">Méditerranée</b><i class="bar"><i id="capb"></i></i></div>
+ <div class="hin g"><div class="w">
+  <div class="k"><span class="fr">Maison de Chasse · Immobilier de prestige en Europe</span><span class="en">Property search house · Prestige real estate in Europe</span></div>
+  <h1><span class="ln"><span><span class="fr">Les agences représentent les vendeurs.</span><span class="en">Agencies represent sellers.</span></span></span><span class="ln"><span><em><span class="fr">Cazar représente les acheteurs.</span><span class="en">Cazar represents buyers.</span></em></span></span></h1>
+  <p><span class="fr">Nous cherchons pour vous sur tout le marché de l’immobilier de prestige, public comme confidentiel, en Europe et à Marrakech. Pas de catalogue, pas de vitrine. Seulement votre projet.</span><span class="en">We search the whole prestige property market for you, public and confidential, across Europe and in Marrakech. No catalogue, no shop window. Only your project.</span></p>
+  <div class="ctas"><a class="btn solid" href="#projet"><span class="fr">Parler de mon projet</span><span class="en">Discuss my project</span></a><a class="btn" href="#projet"><span class="fr">Réserver un appel</span><span class="en">Book a call</span></a></div>
+  <div class="reas"><span><span class="fr">Premier échange offert</span><span class="en">First call is free</span></span><span><span class="fr">Sans engagement</span><span class="en">No commitment</span></span><span><span class="fr">Un fondateur vous répond sous 2 h</span><span class="en">A founder replies within 2 hours</span></span></div>
+  <div class="hstrip"><span><span class="fr">Italie</span><span class="en">Italy</span></span><span><span class="fr">Espagne</span><span class="en">Spain</span></span><span>France</span><span><span class="fr">Grèce</span><span class="en">Greece</span></span><span>Portugal</span><span><span class="fr">Suisse</span><span class="en">Switzerland</span></span><span>Marrakech</span></div>
+ </div></div>
+</div>
+
+<section class="g mani"><div class="w">
+ <img class="fan2" src="i/fan.png" alt="">
+ <p class="mq1"><span class="fr">« Nous n’avons aucun bien à vous vendre, et aucun intérêt à vous en faire acheter un plutôt qu’un autre. »</span><span class="en">“We have no property to sell you, and no interest in steering you to one home over another.”</span></p>
+ <div class="k"><span class="fr">La règle de la maison</span><span class="en">The house rule</span></div>
+</div></section>
+
+<section class="g"><div class="w man">
+ <figure class="fph"><img src="i/founders.jpg" alt="Chibo Agu et Célia Menand"><figcaption>Chibo Agu &amp; Célia Menand, <span class="fr">fondateurs de Cazar</span><span class="en">founders of Cazar</span></figcaption></figure>
+ <div><div class="k"><span class="fr">Qui sommes-nous</span><span class="en">Who we are</span></div>
+ <h2 style="margin-top:16px"><span class="fr">Vous parlez à un fondateur. <em>Pas à un formulaire.</em></span><span class="en">You speak to a founder. <em>Not to a form.</em></span></h2>
+ <p><span class="fr">Chaque projet commence par un échange avec l’un de nous deux. Nous construisons votre brief, puis nous le confions à l’expert local qui connaît le mieux votre marché.</span><span class="en">Every project starts with a conversation with one of us. We build your brief, then hand it to the local expert who knows your market best.</span></p>
+ <div class="fd"><div><span><span class="fr">Co-fondateur</span><span class="en">Co-founder</span></span><b>Chibo Agu</b><p><span class="fr">Six ans à créer et diriger le département immobilier de Le Collectionist.</span><span class="en">Six years building and running the real estate department at Le Collectionist.</span></p></div>
+ <div><span><span class="fr">Co-fondatrice</span><span class="en">Co-founder</span></span><b>Célia Menand</b><p><span class="fr">Elle structure chaque recherche et choisit l’expert local qui la mènera jusqu’à la signature.</span><span class="en">She structures every search and picks the local expert who will carry it through to signing.</span></p></div></div></div>
+</div></section>
+
+<section class="g" id="destinations"><div class="w">
+ <div class="sh"><div><div class="k">Destinations</div><h2><span class="fr">Nos Experts sur les marchés les plus recherchés</span><span class="en">Our Experts in the most sought-after markets</span></h2></div><p><span class="fr">Chaque destination a sa page, son expert local et ses histoires de chasse. Et aussi la Suisse.</span><span class="en">Every destination has its own page, its local expert and its search stories. Switzerland too.</span></p></div>
+ <div class="dwrap"><div class="dlist"><a class="dl" href="#projet" data-dest="Italie" data-img="i/italie.jpg"><img class="dth" src="i/italie.jpg" alt=""><b><span class="fr">Italie</span><span class="en">Italy</span></b><span class="dp"><span class="fr">Lac de Côme, Toscane, Rome</span><span class="en">Lake Como, Tuscany, Rome</span></span><span class="ar">→</span></a><a class="dl" href="#projet" data-dest="Espagne" data-img="i/espagne.jpg"><img class="dth" src="i/espagne.jpg" alt=""><b><span class="fr">Espagne</span><span class="en">Spain</span></b><span class="dp"><span class="fr">Ibiza, Majorque, Marbella</span><span class="en">Ibiza, Mallorca, Marbella</span></span><span class="ar">→</span></a><a class="dl" href="#projet" data-dest="France" data-img="i/tropez.jpg"><img class="dth" src="i/tropez.jpg" alt=""><b><span class="fr">France</span><span class="en">France</span></b><span class="dp"><span class="fr">Paris, Provence, Côte d’Azur</span><span class="en">Paris, Provence, French Riviera</span></span><span class="ar">→</span></a><a class="dl" href="#projet" data-dest="Grèce" data-img="i/grece.jpg"><img class="dth" src="i/grece.jpg" alt=""><b><span class="fr">Grèce</span><span class="en">Greece</span></b><span class="dp"><span class="fr">Mykonos, Paros, Athènes</span><span class="en">Mykonos, Paros, Athens</span></span><span class="ar">→</span></a><a class="dl" href="#projet" data-dest="Portugal" data-img="i/portugal.jpg"><img class="dth" src="i/portugal.jpg" alt=""><b><span class="fr">Portugal</span><span class="en">Portugal</span></b><span class="dp"><span class="fr">Lisbonne, Comporta, Algarve</span><span class="en">Lisbon, Comporta, Algarve</span></span><span class="ar">→</span></a><a class="dl" href="#projet" data-dest="Maroc" data-img="i/maroc.jpg"><img class="dth" src="i/maroc.jpg" alt=""><b><span class="fr">Maroc</span><span class="en">Morocco</span></b><span class="dp"><span class="fr">Marrakech et sa palmeraie</span><span class="en">Marrakech and the Palmeraie</span></span><span class="ar">→</span></a></div><div class="dprev" aria-hidden="true"><img id="dpi" src="i/italie.jpg" alt=""></div></div>
+</div></section>
+
+<section class="g" id="histoires"><div class="w">
+ <div class="sh"><div><div class="k"><span class="fr">Histoires de chasse</span><span class="en">Search stories</span></div><h2><span class="fr">Des projets singuliers, racontés par ceux qui les ont menés</span><span class="en">Singular projects, told by those who led them</span></h2></div><a class="more" href="#histoires"><span class="fr">Toutes les histoires</span><span class="en">All stories</span></a></div>
+ <div class="sg"><article class="st"><div class="sti"><img src="i/como.jpg" alt=""></div><div class="stk"><span class="fr">Lac de Côme</span><span class="en">Lake Como</span></div><h3><span class="fr">Cinq avocats, cinq continents et soixante jours de silence</span><span class="en">Five lawyers, five continents and sixty days of silence</span></h3><span class="more"><span class="fr">Lire l’histoire</span><span class="en">Read the story</span></span></article><article class="st"><div class="sti"><img src="i/ibiza.jpg" alt=""></div><div class="stk"><span class="fr">Ibiza</span><span class="en">Ibiza</span></div><h3><span class="fr">5 ans, 32 visites, puis un inconnu au comptoir</span><span class="en">5 years, 32 viewings, then a stranger at the bar</span></h3><span class="more"><span class="fr">Lire l’histoire</span><span class="en">Read the story</span></span></article><article class="st"><div class="sti"><img src="i/provence.jpg" alt=""></div><div class="stk"><span class="fr">Provence</span><span class="en">Provence</span></div><h3><span class="fr">Quand le Luberon prend toute sa hauteur</span><span class="en">When the Luberon rises to its full height</span></h3><span class="more"><span class="fr">Lire l’histoire</span><span class="en">Read the story</span></span></article></div>
+</div></section>
+
+<section class="g her" id="heritage"><div class="w">
+ <div class="sh"><div><div class="k"><span class="fr">L’héritage Cazar</span><span class="en">The Cazar heritage</span></div><h2><span class="fr">Les plus beaux projets, chassés et concrétisés</span><span class="en">Our finest projects, found and completed</span></h2></div><p><span class="fr">Une sélection de propriétés trouvées par nos Experts pour leurs clients.</span><span class="en">A selection of properties found by our Experts for their clients.</span></p></div>
+ <div class="mq"><div class="mqt"><img src="i/h1.jpg" alt=""><img src="i/h2.jpg" alt=""><img src="i/h4.jpg" alt=""><img src="i/h5.jpg" alt=""><img src="i/h6.jpg" alt=""><img src="i/h7.jpg" alt=""><img src="i/h1.jpg" alt=""><img src="i/h2.jpg" alt=""><img src="i/h4.jpg" alt=""><img src="i/h5.jpg" alt=""><img src="i/h6.jpg" alt=""><img src="i/h7.jpg" alt=""></div></div>
+</div></section>
+
+<section class="g steps" id="chasse"><div class="w">
+ <div class="sh"><div><div class="k"><span class="fr">Une chasse Cazar</span><span class="en">A Cazar search</span></div><h2><span class="fr">Trois temps, de l’appel à la signature</span><span class="en">Three stages, from first call to signing</span></h2></div><p><span class="fr">« Chaque expert Cazar mène un nombre limité de recherches, pour donner à chacune toute son attention. » La règle de la maison.</span><span class="en">“Each Cazar expert runs a limited number of searches, to give each one full attention.” The house rule.</span></p></div>
+ <ol><li><span class="sn">I</span><h3><span class="fr">On échange</span><span class="en">We talk</span></h3><p><span class="fr">20 minutes avec un des fondateurs pour comprendre votre projet. Appel confidentiel et offert.</span><span class="en">20 minutes with one of the founders to understand your project. Confidential and free.</span></p></li><li><span class="sn">II</span><h3><span class="fr">On chasse</span><span class="en">We search</span></h3><p><span class="fr">Votre expert local Cazar, un chasseur immobilier de prestige, cherche partout, y compris là où rien n’est publié.</span><span class="en">Your local Cazar expert, a prestige property hunter, searches everywhere, including where nothing is listed.</span></p></li><li><span class="sn">III</span><h3><span class="fr">Vous achetez</span><span class="en">You buy</span></h3><p><span class="fr">Nous négocions et vous accompagnons jusqu’à la signature.</span><span class="en">We negotiate and stay with you through to signing.</span></p></li></ol>
+</div></section>
+
+<section class="proj" id="projet"><div class="pbg" id="pbg" style="background-image:url(i/calanque.jpg)"></div>
+<div class="g pin"><div class="w">
+ <div class="phd"><div><div class="k"><span class="fr">Votre projet</span><span class="en">Your project</span></div><h2><span class="fr">Racontez-nous la maison que vous cherchez</span><span class="en">Tell us about the home you are looking for</span></h2></div>
+ <div class="prog"><span id="pstep">1 / 3</span><i><i id="pbar" style="width:33%"></i></i></div></div>
+ <form id="pf" novalidate>
+  <div class="pst on" data-s="1"><p class="q"><span class="fr">Où vous voyez-vous ?</span><span class="en">Where do you see yourself?</span></p><div class="tiles"><button type="button" class="tile" data-g="d" data-v="Italie" data-bg="i/italie.jpg"><img src="i/italie.jpg" alt=""><span><span class="fr">Italie</span><span class="en">Italy</span></span></button><button type="button" class="tile" data-g="d" data-v="Espagne" data-bg="i/espagne.jpg"><img src="i/espagne.jpg" alt=""><span><span class="fr">Espagne</span><span class="en">Spain</span></span></button><button type="button" class="tile" data-g="d" data-v="France" data-bg="i/tropez.jpg"><img src="i/tropez.jpg" alt=""><span><span class="fr">France</span><span class="en">France</span></span></button><button type="button" class="tile" data-g="d" data-v="Grèce" data-bg="i/grece.jpg"><img src="i/grece.jpg" alt=""><span><span class="fr">Grèce</span><span class="en">Greece</span></span></button><button type="button" class="tile" data-g="d" data-v="Portugal" data-bg="i/portugal.jpg"><img src="i/portugal.jpg" alt=""><span><span class="fr">Portugal</span><span class="en">Portugal</span></span></button><button type="button" class="tile" data-g="d" data-v="Maroc" data-bg="i/maroc.jpg"><img src="i/maroc.jpg" alt=""><span><span class="fr">Maroc</span><span class="en">Morocco</span></span></button></div>
+   <div class="alt"><span class="fr">Ou bien</span><span class="en">Or</span> <button type="button" class="lk" data-g="d" data-v="Suisse"><span class="fr">la Suisse</span><span class="en">Switzerland</span></button> · <button type="button" class="lk" data-g="d" data-v="Ailleurs"><span class="fr">ailleurs</span><span class="en">elsewhere</span></button></div></div>
+  <div class="pst" data-s="2"><p class="q"><span class="fr">Et quel genre de lieu ?</span><span class="en">And what kind of place?</span></p><div class="tiles t4"><button type="button" class="tile" data-g="l" data-v="Face à la mer" data-bg="i/ibiza.jpg"><img src="i/ibiza.jpg" alt=""><span><span class="fr">Face à la mer</span><span class="en">By the sea</span></span></button><button type="button" class="tile" data-g="l" data-v="Au cœur d’une ville" data-bg="i/h4.jpg"><img src="i/h4.jpg" alt=""><span><span class="fr">Au cœur d’une ville</span><span class="en">In the heart of a city</span></span></button><button type="button" class="tile" data-g="l" data-v="Un domaine à la campagne" data-bg="i/h2.jpg"><img src="i/h2.jpg" alt=""><span><span class="fr">Un domaine à la campagne</span><span class="en">A country estate</span></span></button><button type="button" class="tile" data-g="l" data-v="Une villa d’architecte" data-bg="i/h1.jpg"><img src="i/h1.jpg" alt=""><span><span class="fr">Une villa d’architecte</span><span class="en">An architect villa</span></span></button></div>
+   <div class="alt"><button type="button" class="lk back"><span class="fr">← Changer de destination</span><span class="en">← Change destination</span></button> · <button type="button" class="lk" data-g="l" data-v="À définir ensemble"><span class="fr">à définir ensemble</span><span class="en">to be defined together</span></button></div></div>
+  <div class="pst" data-s="3"><p class="q" id="recap"></p>
+   <div class="fl"><label for="fn"><span class="fr">Prénom</span><span class="en">First name</span><input id="fn" autocomplete="given-name"></label><label for="fe">E-mail<input id="fe" type="email" autocomplete="email"></label>
+   <label class="full" for="ft"><span class="fr">Téléphone ou WhatsApp</span><span class="en">Phone or WhatsApp</span><input id="ft" type="tel" autocomplete="tel"></label></div>
+   <div class="sub"><button class="btn solid" type="submit"><span class="fr">Parler à un fondateur</span><span class="en">Talk to a founder</span></button><span><span class="fr">Réponse sous 2 h ouvrées · Confidentiel · Sans engagement</span><span class="en">Reply within 2 business hours · Confidential · No commitment</span></span></div>
+   <button type="button" class="lk back"><span class="fr">← Revenir</span><span class="en">← Back</span></button></div>
+  <div class="pst" data-s="4"><p class="q"><span class="fr">Merci. Un fondateur vous rappelle très vite.</span><span class="en">Thank you. A founder will call you back shortly.</span></p><p class="fine2"><span class="fr">Sur le site réel, la demande arrive dans le CRM de Cazar avec la destination et le type de lieu. Maquette : aucune donnée n’est envoyée.</span><span class="en">On the live site, the request lands in Cazar’s CRM with destination and type of place. Mockup: no data is sent.</span></p></div>
+ </form>
+</div></div></section>
+
+<section class="g news"><div class="w mk">
+ <div><div class="k"><span class="fr">Pas encore prêts ?</span><span class="en">Not ready yet?</span></div><h2 style="margin-top:14px"><span class="fr">Recevez la lecture du marché de votre destination</span><span class="en">Get the market read for your destination</span></h2>
+ <p style="margin:14px 0 0"><span class="fr">Sous 48 h, notre expert local vous écrit ce qu’il voit vraiment sur le terrain. Offerte, aucun appel commercial.</span><span class="en">Within 48 hours, our local expert writes to you about what they really see on the ground. Free, no sales call.</span></p>
+ <ul><li><span class="fr">Prix réels de transaction</span><span class="en">Real transaction prices</span></li><li><span class="fr">Quartiers qui montent</span><span class="en">Rising neighbourhoods</span></li><li><span class="fr">Opportunités confidentielles</span><span class="en">Confidential opportunities</span></li></ul></div>
+ <div style="background:var(--sand);padding:clamp(24px,4vw,40px)"><img src="i/maison.png" alt="Maison de Chasse" style="margin:0 0 20px">
+ <form class="nf" id="nf" style="margin:0"><input id="ne" type="email" placeholder="E-mail" aria-label="E-mail"><button class="btn solid" type="submit" id="nb"><span class="fr">Recevoir ma lecture</span><span class="en">Get my market read</span></button></form>
+ <p class="fine" style="margin-top:14px"><span class="fr">Ou recevez L’Édition Cazar : histoires de chasse et regards du terrain, une fois par mois.</span><span class="en">Or receive L’Édition Cazar: search stories and field insight, once a month.</span></p></div>
+</div></section>
+
+<footer class="g"><div class="w">
+ <div class="fg">
+  <div><img class="lg" src="i/logo_white.png" alt="CAZAR"><p style="margin:0;max-width:30ch"><span class="fr">Maison de chasse en immobilier de prestige. France, Espagne, Portugal, Italie, Grèce, Suisse, Maroc.</span><span class="en">Prestige property search house. France, Spain, Portugal, Italy, Greece, Switzerland, Morocco.</span></p></div>
+  <div><h4><span class="fr">Contact</span><span class="en">Contact</span></h4><ul><li class="sel">contact@cazar.fr</li><li class="sel">+33 6 72 26 23 09</li><li>WhatsApp</li><li>Instagram @maison.cazar</li></ul></div>
+  <div><h4><span class="fr">Rejoignez-nous</span><span class="en">Join us</span></h4><ul><li><span class="fr">Les Experts Cazar</span><span class="en">Cazar Experts</span></li><li><span class="fr">Les Partenaires Cazar</span><span class="en">Cazar Partners</span></li><li><span class="fr">Agents de voyage</span><span class="en">Travel agents</span></li></ul></div>
+  <div><h4><span class="fr">Voies singulières</span><span class="en">Singular paths</span></h4><ul><li><span class="fr">Sport & Légendes</span><span class="en">Sport & Legends</span></li><li>Art & Culture</li><li><span class="fr">Projets hôteliers</span><span class="en">Hotel projects</span></li></ul></div>
+ </div>
+ <div class="fb"><span>© 2026 Cazar · <span class="fr">Mentions légales</span><span class="en">Legal notice</span> · <span class="fr">Confidentialité</span><span class="en">Privacy</span></span><span><span class="fr">Maquette réalisée par Aimji Studio · aimji-studio.com</span><span class="en">Mockup by Aimji Studio · aimji-studio.com</span></span></div>
+</div></footer>
+
+<button class="nbtn" id="nbtn" type="button">Notes Aimji</button>
+<div class="np" id="np" hidden><h4>Ce que la maquette montre</h4><p>Les leviers de croissance intégrés au nouveau site.</p><ul><li><span class="nn">1</span><div><b>Le même message, en anglais</b><p>FR / EN en haut à droite : la promesse fondateur, les 5 % et la garantie 60 jours deviennent lisibles par les acheteurs britanniques et américains.</p></div></li><li><span class="nn">2</span><div><b>Le formulaire branché au CRM</b><p>Vos quatre questions, reprises telles quelles : chaque demande arrive triée par destination et budget, et compte comme conversion dans Google et Meta.</p></div></li><li><span class="nn">3</span><div><b>Une page par destination</b><p>Chaque carte ouvre une page pensée pour Google, en français et en anglais, avec l’expert local et les histoires de chasse du lieu.</p></div></li><li><span class="nn">4</span><div><b>La lecture du marché automatisée</b><p>Le « pas encore prêt » devient une liste de futurs acheteurs, relancée par email jusqu’au bon moment.</p></div></li><li><span class="nn">5</span><div><b>Les histoires de chasse en avant</b><p>Le contenu que Cazar écrit déjà devient une porte d’entrée : il travaille pour le référencement et pour la confiance.</p></div></li><li><span class="nn">6</span><div><b>Rapide sur mobile</b><p>Site sur mesure, hors Wix : pages légères, chargement rapide, suivi propre des visites et des demandes.</p></div></li></ul></div>
+
+<script>
+(function(){
+ var b=document.body,fr=document.getElementById('lfr'),en=document.getElementById('len');
+ function L(l){b.classList.toggle('l-en',l==='en');fr.classList.toggle('on',l!=='en');en.classList.toggle('on',l==='en');document.documentElement.lang=l;try{localStorage.setItem('cz-l',l)}catch(e){}}
+ fr.onclick=function(){L('fr')};en.onclick=function(){L('en')};
+ try{if(localStorage.getItem('cz-l')==='en')L('en')}catch(e){}
+ var sel={},pf=document.getElementById('pf'),pbg=document.getElementById('pbg');
+ function go(n){pf.querySelectorAll('.pst').forEach(function(x){x.classList.toggle('on',x.dataset.s==n)});document.getElementById('pstep').textContent=Math.min(n,3)+' / 3';document.getElementById('pbar').style.width=(Math.min(n,3)/3*100)+'%';
+  if(n==3){var en=b.classList.contains('l-en');document.getElementById('recap').textContent=(sel.d||'')+(sel.l?' · '+sel.l:'')+(en?'. Where can a founder reach you?':'. Où un fondateur peut-il vous joindre ?')}}
+ pf.querySelectorAll('[data-g]').forEach(function(c){c.addEventListener('click',function(){var g=c.dataset.g;pf.querySelectorAll('[data-g="'+g+'"]').forEach(function(x){x.classList.remove('on')});c.classList.add('on');
+  var l=c.querySelector(b.classList.contains('l-en')?'.en':'.fr');sel[g]=l?l.textContent:c.dataset.v;if(c.dataset.bg)pbg.style.backgroundImage='url('+c.dataset.bg+')';setTimeout(function(){go(g==='d'?2:3)},350)})});
+ pf.querySelectorAll('.back').forEach(function(x){x.onclick=function(){var cur=+pf.querySelector('.pst.on').dataset.s;go(cur-1)}});
+ document.querySelectorAll('.dl').forEach(function(d){d.addEventListener('click',function(){var c=pf.querySelector('.tile[data-v="'+d.dataset.dest+'"]');if(c)c.click()})});
+ var dpi=document.getElementById('dpi');document.querySelectorAll('.dl').forEach(function(d){d.addEventListener('mouseenter',function(){document.querySelectorAll('.dl').forEach(function(x){x.classList.remove('on')});d.classList.add('on');dpi.style.opacity=0;setTimeout(function(){dpi.src=d.dataset.img;dpi.style.opacity=1},180)})});document.querySelector('.dl').classList.add('on');
+ pf.addEventListener('submit',function(e){e.preventDefault();go(4)});
+ var sl=document.querySelectorAll('.sl'),capt=[['Méditerranée','Mediterranean'],['Lac de Côme','Lake Como'],['Ibiza','Ibiza'],['Provence','Provence'],['Marrakech','Marrakech']],si=0,cb=document.getElementById('capb');
+ function cap(){var e=b.classList.contains('l-en');document.getElementById('capt').textContent=capt[si][e?1:0];document.getElementById('capn').textContent='0'+(si+1)+' / 05';cb.classList.remove('run');void cb.offsetWidth;cb.classList.add('run')}
+ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){cap();setInterval(function(){sl[si].classList.remove('on');si=(si+1)%sl.length;sl[si].classList.add('on');cap()},6000)}
+ document.getElementById('nf').addEventListener('submit',function(e){e.preventDefault();var x=document.getElementById('nb');x.innerHTML=b.classList.contains('l-en')?'Noted (mockup)':'C’est noté (maquette)'});
+ var nb=document.getElementById('nbtn'),np=document.getElementById('np');nb.onclick=function(){np.hidden=!np.hidden;nb.textContent=np.hidden?'Notes Aimji':'Fermer'};
+})();
+</script>
+
+</body>
+</html>
